@@ -6,9 +6,9 @@ import itertools
 import xml
 import xml.etree.ElementTree as ET
 import xml.dom.minidom as minidom
-repo_url = "git@github.com:omeshvalyal/my_python.git"
-local_clone_path = "/var/lib/jenkins/workspace/sample_folder"
-source_branch_name = "main"
+repo_url = "git@github.com:omeshvalyal/helloworld.git"
+local_clone_path = "/var/lib/jenkins/my_work"
+source_branch_name = "master"
 # current_version = "release/"+ sys.argv[2]
 # print('source_branch_name: '+source_branch_name)
 # print('current_version: '+current_version)
