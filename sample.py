@@ -19,22 +19,22 @@ os.chdir(local_clone_path)
 source_folder = "template_<version>"
 destination_folder = sys.argv[2]
 if os.path.exists(destination_folder) and os.path.isdir(destination_folder):
-    print(f"The folder '{destination_folder}' already exists!!")
+    print("The folder '{destination_folder}' already exists!!")
 else:
-    print(f"The folder '{destination_folder}' does not exist!!")
+    print("The folder '{destination_folder}' does not exist!!")
     # Copy the template version folder to the destination renaming it with current version
     shutil.copytree(source_folder, destination_folder)
-    print(f"The folder '{destination_folder}' has been created!!")
+    print("The folder '{destination_folder}' has been created!!")
 source_file_list = ["changelog_"+sys.argv[1]+"_installer_isolated.xml", "changelog_"+sys.argv[1]+"_installer_mssp.xml", "changelog_"+sys.argv[1]+"_mssp.xml", "changelog_"+sys.argv[1]+".xml"]
 destination_file_list = ["changelog_"+sys.argv[2]+"_installer_isolated.xml", "changelog_"+sys.argv[2]+"_installer_mssp.xml", "changelog_"+sys.argv[2]+"_mssp.xml", "changelog_"+sys.argv[2]+".xml"]
 for source_file,destination_file in zip(source_file_list,destination_file_list):
     # print(source_file,destination_file)
 	if os.path.exists(destination_file) and os.path.isfile(destination_file):
-	    print(f"The file '{destination_file}' exists in the directory.")
+	    print("The file '{destination_file}' exists in the directory.")
 	else:
-	    print(f"The file '{destination_file}' does not exist in the directory!!")
+	    print("The file '{destination_file}' does not exist in the directory!!")
 	    subprocess.run(["cp", source_file, destination_file])
-	    print(f"The file '{destination_file}' has been created!!")
+	    print("The file '{destination_file}' has been created!!")
 	  
 template_file_list = ["changelog_installer_isolated.xml","changelog_installer_mssp.xml","changelog_mssp.xml","changelog.xml"]
 for template_source_file,destination_file in zip(template_file_list,destination_file_list):
